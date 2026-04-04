@@ -8,9 +8,10 @@
     "dev": "node --watch server/index.js"
   },
   "dependencies": {
-    "sql.js": "^1.11.0",
+    "compression": "^1.8.1",
     "express": "^4.21.0",
     "helmet": "^8.0.0",
-    "nodemailer": "^6.9.0"
+    "nodemailer": "^6.9.0",
+    "sql.js": "^1.11.0"
   }
 }

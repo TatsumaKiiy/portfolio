@@ -1,6 +1,7 @@
 var path = require('path');
 var express = require('express');
 var helmet = require('helmet');
+var compression = require('compression');
 
 // Load .env if present
 var envPath = path.join(__dirname, '..', '.env');
@@ -19,6 +20,9 @@ try {
 
 var app = express();
 var PORT = process.env.PORT || 3000;
+
+// Gzip compression
+app.use(compression());
 
 // Security headers (permissive CSP for Google Maps iframe)
 app.use(helmet({
@@ -40,7 +44,15 @@ app.use(express.json());
 
 // Serve static files from project root
 app.use(express.static(path.join(__dirname, '..'), {
-  extensions: ['html']
+  extensions: ['html'],
+  maxAge: '7d',
+  immutable: true,
+  setHeaders: function (res, filePath) {
+    // HTML pages: no cache (always fresh)
+    if (filePath.endsWith('.html')) {
+      res.setHeader('Cache-Control', 'no-cache');
+    }
+  }
 }));
 
 // API routes

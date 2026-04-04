@@ -328,7 +328,7 @@ body::after {
 .nav-logo img {
   height: 48px;
   width: auto;
-  transition: all var(--transition);
+  transition: transform var(--transition), opacity var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition), color var(--transition);
 }
 
 .nav-logo:hover img {
@@ -405,7 +405,7 @@ body::after {
   font-size: 0.82rem;
   letter-spacing: 0.8px;
   border: 2px solid var(--red);
-  transition: all var(--transition);
+  transition: transform var(--transition), opacity var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition), color var(--transition);
   text-transform: uppercase;
   position: relative;
   overflow: hidden;
@@ -614,7 +614,7 @@ body::after {
   letter-spacing: 1.2px;
   text-transform: uppercase;
   border: 2px solid transparent;
-  transition: all var(--transition);
+  transition: transform var(--transition), opacity var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition), color var(--transition);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -654,7 +654,7 @@ body::after {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  transition: all var(--transition);
+  transition: transform var(--transition), opacity var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition), color var(--transition);
 }
 
 .btn-ghost:hover {
@@ -884,7 +884,7 @@ body::after {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  transition: all var(--transition);
+  transition: transform var(--transition), opacity var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition), color var(--transition);
   border-bottom: 2px solid transparent;
   padding-bottom: 2px;
 }
@@ -976,7 +976,7 @@ body::after {
   border-radius: var(--radius-md);
   padding: 36px 24px;
   text-align: center;
-  transition: all var(--transition);
+  transition: transform var(--transition), opacity var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition), color var(--transition);
   cursor: pointer;
   border: 2px solid transparent;
   position: relative;
@@ -1068,7 +1068,7 @@ body::after {
   font-weight: 700;
   font-size: 0.85rem;
   cursor: pointer;
-  transition: all var(--transition);
+  transition: transform var(--transition), opacity var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition), color var(--transition);
   color: var(--text);
   font-family: 'DM Sans', sans-serif;
   position: relative;
@@ -1097,7 +1097,7 @@ body::after {
   background: var(--cream);
   border-radius: var(--radius-md);
   overflow: hidden;
-  transition: all var(--transition);
+  transition: transform var(--transition), opacity var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition), color var(--transition);
   cursor: pointer;
 }
 
@@ -1265,7 +1265,7 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition);
+  transition: transform var(--transition), opacity var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition), color var(--transition);
 }
 
 .story-illust:hover {
@@ -1390,7 +1390,7 @@ body::after {
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  transition: all var(--transition);
+  transition: transform var(--transition), opacity var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition), color var(--transition);
   font-family: 'DM Sans', sans-serif;
   white-space: nowrap;
   position: relative;
@@ -1449,7 +1449,7 @@ body::after {
   color: #A09080;
   text-decoration: none;
   font-size: 0.92rem;
-  transition: all var(--transition);
+  transition: transform var(--transition), opacity var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition), color var(--transition);
 }
 
 .footer-col ul a:hover {
@@ -1485,7 +1485,7 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition);
+  transition: transform var(--transition), opacity var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition), color var(--transition);
   opacity: 0;
   transform: translateY(15px);
 }
@@ -1529,7 +1529,7 @@ body::after {
   border: none;
   opacity: 0;
   transform: translateY(20px);
-  transition: all var(--transition);
+  transition: transform var(--transition), opacity var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition), color var(--transition);
   z-index: 99;
   box-shadow: 0 8px 25px rgba(227, 30, 36, 0.3);
 }
@@ -1679,7 +1679,7 @@ body::after {
   padding: 22px 24px;
   border-radius: var(--radius-md);
   border: 2px solid transparent;
-  transition: all var(--transition);
+  transition: transform var(--transition), opacity var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition), color var(--transition);
 }
 .contact-info-card:hover {
   border-color: var(--red);
@@ -1733,7 +1733,7 @@ body::after {
   border-radius: var(--radius-full);
   font-weight: 700;
   font-size: 0.85rem;
-  transition: all var(--transition);
+  transition: transform var(--transition), opacity var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition), color var(--transition);
   border: 2px solid var(--red);
 }
 .contact-social-link:hover {

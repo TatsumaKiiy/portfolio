@@ -147,9 +147,14 @@
   // ===== CUSTOM CURSOR =====
   if (!isTouch && !isMobile) {
     var cursor = document.getElementById('cursor');
-    var mx = 0, my = 0, cx = 0, cy = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', function (e) { mx = e.clientX; my = e.clientY; });
-    var hoverSel = 'a, button, .product-card, .category-card, .tab-btn, .testimonial-card';
+    var mx = 0, my = 0, rx = 0, ry = 0, cursorMoving = false;
+    var cursorDot = cursor.children[0];
+    var cursorRing = cursor.children[1];
+    document.addEventListener('mousemove', function (e) {
+      mx = e.clientX; my = e.clientY;
+      if (!cursorMoving) { cursorMoving = true; cursorLoop(); }
+    }, { passive: true });
+    var hoverSel = 'a, button, .product-card, .category-card, .tab-btn';
     document.addEventListener('mouseover', function (e) {
       if (e.target.closest(hoverSel)) cursor.classList.add('hover');
     });
@@ -157,14 +162,15 @@
       if (e.target.closest(hoverSel)) cursor.classList.remove('hover');
     });
 
-    (function cursorLoop() {
-      cx = mx; cy = my;
+    function cursorLoop() {
       rx += (mx - rx) * 0.12;
       ry += (my - ry) * 0.12;
-      cursor.children[0].style.transform = 'translate(' + cx + 'px, ' + cy + 'px) translate(-50%, -50%)';
-      cursor.children[1].style.transform = 'translate(' + rx + 'px, ' + ry + 'px) translate(-50%, -50%)';
-      requestAnimationFrame(cursorLoop);
-    })();
+      cursorDot.style.transform = 'translate(' + mx + 'px, ' + my + 'px) translate(-50%, -50%)';
+      cursorRing.style.transform = 'translate(' + rx + 'px, ' + ry + 'px) translate(-50%, -50%)';
+      if (Math.abs(mx - rx) > 0.5 || Math.abs(my - ry) > 0.5) {
+        requestAnimationFrame(cursorLoop);
+      } else { cursorMoving = false; }
+    }
   }
 
   // ===== MAGNETIC BUTTONS =====
