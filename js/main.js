@@ -286,57 +286,16 @@
   var scrollBtn = document.getElementById('scrollTop');
   var navbar = document.getElementById('navbar');
 
-  // Parallax: collect all elements with data-parallax or data-parallax-y (desktop only)
-  var parallaxEls = [];
-  if (!isMobile && !prefersReducedMotion) {
-    document.querySelectorAll('[data-parallax]').forEach(function (el) {
-      parallaxEls.push({ el: el, speed: parseFloat(el.dataset.parallax), mode: 'hero' });
-    });
-    document.querySelectorAll('[data-parallax-y]').forEach(function (el) {
-      parallaxEls.push({ el: el, speed: parseFloat(el.dataset.parallaxY), mode: 'section' });
-    });
-  }
-
-  var ticking = false;
   window.addEventListener('scroll', function () {
-    if (!ticking) {
-      requestAnimationFrame(function () {
-        var s = window.scrollY;
-        var max = document.documentElement.scrollHeight - window.innerHeight;
-        var wh = window.innerHeight;
+    var s = window.scrollY;
+    var max = document.documentElement.scrollHeight - window.innerHeight;
 
-        // Progress bar
-        scrollProgress.style.transform = 'scaleX(' + (s / max) + ')';
-        // Navbar shadow
-        navbar.classList.toggle('scrolled', s > 20);
-        // Scroll-to-top
-        scrollBtn.classList.toggle('visible', s > 400);
-
-        // Parallax (desktop only)
-        for (var i = 0; i < parallaxEls.length; i++) {
-          var p = parallaxEls[i];
-          var el = p.el;
-
-          if (p.mode === 'hero') {
-            // Hero parallax: based on global scroll
-            var parent = el.closest('section');
-            if (parent && parent.getBoundingClientRect().bottom > 0) {
-              el.style.transform = 'translateY(' + (s * -p.speed) + 'px)';
-            }
-          } else {
-            // Section parallax: based on element position in viewport
-            var rect = el.getBoundingClientRect();
-            if (rect.top < wh && rect.bottom > 0) {
-              var offset = (rect.top - wh / 2) * p.speed;
-              el.style.transform = 'translateY(' + offset + 'px)';
-            }
-          }
-        }
-
-        ticking = false;
-      });
-      ticking = true;
-    }
+    // Progress bar
+    scrollProgress.style.transform = 'scaleX(' + (s / max) + ')';
+    // Navbar shadow
+    navbar.classList.toggle('scrolled', s > 20);
+    // Scroll-to-top
+    scrollBtn.classList.toggle('visible', s > 400);
   }, { passive: true });
 
   scrollBtn.addEventListener('click', function () {

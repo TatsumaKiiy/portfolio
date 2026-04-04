@@ -806,57 +806,6 @@ body::after {
   width: 80px;
 }
 
-/* ===== PARALLAX DECORATIONS ===== */
-.parallax-deco {
-  position: absolute;
-  pointer-events: none;
-  will-change: transform;
-  transition: opacity 0.3s ease;
-}
-/* Hero beans */
-.parallax-bean-1 {
-  width: 30px;
-  top: 15%;
-  right: 20%;
-  transform: rotate(-25deg);
-}
-.parallax-bean-2 {
-  width: 22px;
-  bottom: 30%;
-  left: 5%;
-  transform: rotate(40deg);
-}
-.parallax-bean-3 {
-  width: 18px;
-  top: 60%;
-  right: 5%;
-  transform: rotate(-60deg);
-}
-/* Banner beans */
-.banner-bean-1 {
-  width: 28px;
-  top: 20%;
-  right: 15%;
-  transform: rotate(30deg);
-  z-index: 0;
-}
-.banner-bean-2 {
-  width: 20px;
-  bottom: 20%;
-  left: 5%;
-  transform: rotate(-45deg);
-  z-index: 0;
-}
-/* Parallax elements with perspective depth */
-[data-parallax], [data-parallax-y] {
-  will-change: transform;
-}
-/* Hover micro-interaction on parallax images */
-.hero-img-main:hover,
-.hero-img-round:hover {
-  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.22)) brightness(1.03);
-}
-
 /* Chocolate particles */
 .particle {
   position: absolute;
@@ -1628,15 +1577,8 @@ body::after {
   .cursor,
   #preloader,
   .preload-wipe,
-  .particle,
-  .parallax-deco {
+  .particle {
     display: none !important;
-  }
-
-  [data-parallax],
-  [data-parallax-y] {
-    transform: none !important;
-    will-change: auto !important;
   }
 
   .reveal,
